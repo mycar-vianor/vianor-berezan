@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Car & Vianor Березань</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --vianor-orange: #ff8200; /* Фірмовий помаранчевий */
+            --vianor-orange: #ff8200;
             --dark-gray: #1e1e1e;
             --light-gray: #f4f4f4;
             --white: #ffffff;
@@ -26,13 +27,6 @@
             text-align: center;
         }
 
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-
         .brand-name {
             font-size: 2.5rem;
             font-weight: 900;
@@ -40,16 +34,14 @@
             text-transform: uppercase;
         }
 
-        .brand-name span {
-            color: var(--vianor-orange);
-        }
+        .brand-name span { color: var(--vianor-orange); }
 
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1486006396193-471068589dcb?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
-            height: 300px;
+            padding: 60px 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -57,6 +49,50 @@
             color: white;
             text-align: center;
         }
+
+        /* Стиль для SERVICE PARTS DRIVE */
+        .slogan {
+            color: var(--vianor-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--vianor-orange);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .phone-link {
+            color: var(--vianor-orange);
+            text-decoration: none;
+            font-size: 1.6rem;
+        }
+
+        /* Блок соцмереж під телефоном */
+        .social-bar {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            font-size: 1.8rem;
+        }
+
+        .social-bar a {
+            color: white;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-bar a:hover { color: var(--vianor-orange); }
 
         .services-grid {
             display: grid;
@@ -75,54 +111,72 @@
             transition: 0.3s;
         }
 
-        .service-card:hover {
-            background: var(--dark-gray);
-            color: white;
-            transform: translateY(-5px);
-        }
-
-        .contact-btn {
-            background: var(--vianor-orange);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 15px;
-        }
-
+        /* Оновлений підвал (дві колонки) */
         footer {
             background: var(--dark-gray);
-            color: #888;
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 0.9rem;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .schedule-footer {
+            text-align: left;
+        }
+
+        .schedule-footer h3 {
+            color: var(--vianor-orange);
+            margin-top: 0;
+        }
+
+        .address-footer {
+            text-align: right;
+        }
+
+        .map-link {
+            color: var(--vianor-orange);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 600px) {
+            .footer-content { text-align: center; justify-content: center; }
+            .address-footer { text-align: center; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-container">
-        <div class="brand-name">My <span>Car</span></div>
-    </div>
+    <div class="brand-name">My <span>Car</span></div>
 </header>
 
 <section class="hero">
-    <h1>Vianor Березань — Ваш надійний партнер</h1>
-    <p>SERVICE PARTS DRIVE</p>
     
-    <div style="display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: bold; flex-wrap: wrap; justify-content: center;">
-        <span>Магазин / Шиномонтаж</span>
-        <a href="tel:+380961659189" style="color: var(--vianor-orange); text-decoration: none; font-size: 1.5rem; transition: 0.3s;">
-            096-165-91-89
-        </a>
-    </div>
+    <h1>Vianor Березань — Ваш надійний партнер</h1>
+    <div class="slogan">SERVICE PARTS DRIVE</div>
+    <div class="contact-line" style="margin-top: 40px;">
+    <span>Магазин / Шиномонтаж</span>
+    <a href="tel:+380961659189" class="phone-link">096-165-91-89</a>
+</div>
+
+<div class="social-bar">
+    <a href="viber://chat?number=%2B380961659189" title="Viber"><i class="fab fa-viber"></i></a>
+    <a href="#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
 </section>
+
 <div class="services-grid">
     <div class="service-card">
         <h3>Шиномонтаж</h3>
@@ -138,15 +192,24 @@
     </div>
 </div>
 
-<footer style="background: var(--dark-gray); color: #888; padding: 30px 20px; text-align: center; font-size: 0.9rem;">
-    <p>
-        <a href="https://www.google.com/maps/search/?api=1&query=VIANOR+Березань+вул+Гагаріна+3а" 
-           target="_blank" 
-           style="color: var(--vianor-orange); text-decoration: none; font-weight: bold; font-size: 1.1rem;">
-            📍 м. Березань, вул. Гагаріна, 3а
-        </a>
+<footer>
+    <div class="footer-content">
+        <div class="schedule-footer">
+            <h3>🕒 Графік роботи</h3>
+            <p>Пн - Сб: 09:00 - 18:00</p>
+            <p>Неділя: 09:00 - 15:00</p>
+        </div>
+
+        <div class="address-footer">
+            <h3>📍 Контакти</h3>
+            <p>м. Березань, вул. Гагаріна, 3а</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Vianor+Березань+Гагаріна+3а" target="_blank" class="map-link">Відкрити в Google Картах</a>
+        </div>
+    </div>
+    <p style="text-align: center; margin-top: 30px; color: #888; font-size: 0.8rem;">
+        &copy; 2024 My Car & Vianor Березань. Розроблено для комфорту в дорозі.
     </p>
-    <p style="margin-top: 10px;">&copy; 2024 My Car & Vianor Березань. Всі права захищено.</p>
 </footer>
+
 </body>
 </html>
